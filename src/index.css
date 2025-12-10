@@ -1,0 +1,96 @@
+/* index.css - FULLY RESPONSIVE VERSION */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #F1F8E9;
+  color: #1B5E20;
+  line-height: 1.6;
+  
+  /* Prevent horizontal scroll */
+  overflow-x: hidden;
+  max-width: 100vw;
+  
+  /* Responsive font size */
+  font-size: 14px;
+}
+
+/* Responsive body font sizes */
+@media (min-width: 375px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   ULTRA SMALL SCREEN GLOBAL FIXES (270px+)
+   ============================================ */
+
+@media (max-width: 400px) {
+  /* Smaller base font for tiny screens */
+  body {
+    font-size: 13px;
+  }
+  
+  /* Ensure all containers fit */
+  * {
+    max-width: 100% !important;
+  }
+  
+  /* Remove any fixed widths that might cause overflow */
+  div, section, article, header, footer, nav, aside {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* ============================================
+   SMOOTH SCROLLING
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #1B5E20;
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

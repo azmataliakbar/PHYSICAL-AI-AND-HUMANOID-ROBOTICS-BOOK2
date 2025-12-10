@@ -1,0 +1,758 @@
+/* frontend/src/styles/content.css */
+
+/* ============================================
+   BOOK CONTENT STYLING
+   Beautiful typography and formatting for book pages
+   ============================================ */
+/* frontend/src/styles/content.css */
+
+/* ============================================
+   FORCE BLACK HEADINGS - HIGHEST PRIORITY
+   ============================================ */
+
+/* Override ALL heading colors - MUST be at top */
+.book-content h1,
+.book-content h2,
+.book-content h3,
+.book-content h4,
+.book-content h5,
+.book-content h6 {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+/* Also force black in markdown rendering */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  color: #000000 !important;
+}
+
+/* Force black on any title classes */
+[class*="title"],
+[class*="Title"],
+[class*="heading"],
+[class*="Heading"] {
+  color: #000000 !important;
+}
+
+/* FORCE BLACK TEXT - OVERRIDE ALL */
+.book-content * {
+  color: rgb(114, 114, 114) !important;
+}
+
+.book-content code {
+  color: #dc2626 !important; /* Keep code red */
+}
+
+.book-content a {
+  color: #6366f1 !important; /* Keep links blue */
+}
+
+/* Base content container */
+.book-content {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #111827;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%; /* ADD THIS - makes it responsive */
+  box-sizing: border-box; /* ADD THIS */
+}
+
+/* Headings */
+.book-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000000 !important; /* ADD !important */
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  border-bottom: 3px solid var(--primary-color, #6366f1);
+  padding-bottom: 0.5rem;
+  word-wrap: break-word; /* ADD THIS */
+}
+
+.book-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000 !important; /* ADD !important */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  word-wrap: break-word; /* ADD THIS */
+}
+
+.book-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827 !important; /* ADD !important */
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  word-wrap: break-word; /* ADD THIS */
+}
+
+.book-content h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937 !important; /* ADD !important */
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word; /* ADD THIS */
+}
+
+/* Paragraphs */
+.book-content p {
+  margin-bottom: 1.25rem;
+  text-align: justify;
+  color: #1f2937 !important; /* ADD !important */
+  font-weight: 400;
+  word-wrap: break-word; /* ADD THIS */
+  overflow-wrap: break-word; /* ADD THIS */
+}
+
+.book-content p:first-of-type {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Lists */
+.book-content ul,
+.book-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.book-content ul li,
+.book-content ol li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  word-wrap: break-word; /* ADD THIS */
+}
+
+.book-content ul li::marker {
+  color: var(--primary-color, #6366f1);
+  font-weight: bold;
+}
+
+.book-content ol li::marker {
+  color: var(--primary-color, #6366f1);
+  font-weight: bold;
+}
+
+/* Links */
+.book-content a {
+  color: var(--primary-color, #6366f1) !important; /* ADD !important */
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+  word-wrap: break-word; /* ADD THIS */
+  overflow-wrap: break-word; /* ADD THIS */
+}
+
+.book-content a:hover {
+  color: #4f46e5 !important; /* ADD !important */
+}
+
+/* Blockquotes */
+.book-content blockquote {
+  border-left: 4px solid var(--primary-color, #6366f1);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #4b5563 !important; /* ADD !important */
+  background: #f9fafb;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Inline code */
+.book-content code {
+  background: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #dc2626 !important; /* Already has !important */
+  border: 1px solid #e5e7eb;
+  word-wrap: break-word; /* ADD THIS */
+}
+
+/* Pre/Code blocks */
+.book-content pre {
+  margin: 1.5rem 0;
+  overflow-x: auto; /* ADD THIS */
+  -webkit-overflow-scrolling: touch; /* ADD THIS */
+}
+
+/* Strong/Bold */
+.book-content strong,
+.book-content b {
+  font-weight: 700;
+  color: #111827 !important; /* ADD !important */
+}
+
+/* Emphasis/Italic */
+.book-content em,
+.book-content i {
+  font-style: italic;
+}
+
+/* Horizontal rules */
+.book-content hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 2rem 0;
+}
+
+/* Tables */
+.book-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  display: block; /* ADD THIS */
+  overflow-x: auto; /* ADD THIS */
+  -webkit-overflow-scrolling: touch; /* ADD THIS */
+}
+
+.book-content table th {
+  background: var(--primary-color, #6366f1);
+  color: white !important; /* ADD !important */
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.book-content table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.book-content table tr:hover {
+  background: #f9fafb;
+}
+
+/* Images */
+.book-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Captions */
+.book-content figcaption {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280 !important; /* ADD !important */
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Emoji styling */
+.book-content .emoji {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+/* Section dividers */
+.book-content .section-divider {
+  text-align: center;
+  margin: 2rem 0;
+  color: #9ca3af !important; /* ADD !important */
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+}
+
+/* Print styles */
+@media print {
+  .book-content {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  .book-content h1 {
+    page-break-after: avoid;
+  }
+  
+  .book-content h2,
+  .book-content h3 {
+    page-break-after: avoid;
+  }
+  
+  .book-content pre,
+  .book-content blockquote {
+    page-break-inside: avoid;
+  }
+}
+
+/* ============================================
+   🔥 NEW RESPONSIVE STYLES - 270px and above
+   ============================================ */
+
+/* Ultra Small Phones: 270px - 319px */
+@media (max-width: 319px) {
+  .book-content {
+    font-size: 13px;
+    padding: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  .book-content h1 {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    border-bottom-width: 2px;
+  }
+  
+  .book-content h2 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .book-content h3 {
+    font-size: 1.1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .book-content h4 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .book-content p {
+    font-size: 13px;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .book-content ul,
+  .book-content ol {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .book-content blockquote {
+    padding: 0.5rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+  
+  .book-content code {
+    font-size: 0.8em;
+    padding: 0.15rem 0.3rem;
+  }
+  
+  .book-content table {
+    font-size: 0.75rem;
+  }
+  
+  .book-content table th,
+  .book-content table td {
+    padding: 0.4rem;
+  }
+}
+
+/* Small Phones: 320px - 374px */
+@media (min-width: 320px) and (max-width: 374px) {
+  .book-content {
+    font-size: 14px;
+    padding: 0.75rem;
+    line-height: 1.6;
+  }
+  
+  .book-content h1 {
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .book-content h2 {
+    font-size: 1.3rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .book-content h3 {
+    font-size: 1.15rem;
+  }
+  
+  .book-content h4 {
+    font-size: 1.05rem;
+  }
+  
+  .book-content p {
+    text-align: left;
+  }
+  
+  .book-content ul,
+  .book-content ol {
+    padding-left: 1.5rem;
+  }
+}
+
+/* Medium Phones: 375px - 479px */
+@media (min-width: 375px) and (max-width: 479px) {
+  .book-content {
+    font-size: 14px;
+    padding: 1rem;
+  }
+  
+  .book-content h1 {
+    font-size: 1.65rem;
+  }
+  
+  .book-content h2 {
+    font-size: 1.4rem;
+  }
+  
+  .book-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .book-content p {
+    text-align: left;
+  }
+}
+
+/* Large Phones: 480px - 639px */
+@media (min-width: 480px) and (max-width: 639px) {
+  .book-content {
+    font-size: 15px;
+    padding: 1rem;
+  }
+  
+  .book-content h1 {
+    font-size: 1.75rem;
+  }
+  
+  .book-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .book-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small Tablets: 640px - 767px */
+@media (min-width: 640px) and (max-width: 767px) {
+  .book-content {
+    font-size: 15px;
+    padding: 1.25rem;
+  }
+  
+  .book-content h1 {
+    font-size: 1.9rem;
+  }
+  
+  .book-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .book-content p {
+    text-align: justify;
+  }
+}
+
+/* Tablets: 768px - 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .book-content {
+    font-size: 15px;
+    padding: 1.5rem;
+  }
+  
+  .book-content h1 {
+    font-size: 2rem;
+  }
+  
+  .book-content h2 {
+    font-size: 1.65rem;
+  }
+  
+  .book-content h3 {
+    font-size: 1.35rem;
+  }
+}
+
+/* Laptops: 1024px+ (Your original styles) */
+@media (min-width: 1024px) {
+  .book-content {
+    font-size: 16px;
+    padding: 2rem;
+  }
+  
+  .book-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .book-content h2 {
+    font-size: 2rem;
+  }
+  
+  .book-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .book-content h4 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .book-content {
+    color: #e5e7eb;
+  }
+  
+  .book-content h1,
+  .book-content h2,
+  .book-content h3 {
+    color: #f3f4f6 !important;
+  }
+  
+  .book-content blockquote {
+    background: #1f2937;
+    color: #d1d5db !important;
+  }
+  
+  .book-content code {
+    background: #1f2937;
+    color: #fca5a5 !important;
+    border-color: #374151;
+  }
+  
+  .book-content table td {
+    border-color: #374151;
+  }
+  
+  .book-content table tr:hover {
+    background: #1f2937;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.book-content {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Selection styling */
+.book-content ::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: inherit;
+}
+
+/* Scroll margin for anchor links */
+.book-content h1,
+.book-content h2,
+.book-content h3 {
+  scroll-margin-top: 100px;
+}
+
+/* Welcome Page Specific Styles */
+.welcome-page .book-icon {
+  color: #ef4444 !important;
+}
+
+.welcome-page .title-text {
+  color: rgb(1, 183, 1) !important;
+}
+
+.welcome-page .author-text {
+  color: blue !important;
+  font-weight: bold !important;
+}
+
+.welcome-page .start-button {
+  background-color: #bae6fd !important;
+  color: #111827 !important;
+}
+
+.welcome-page .start-button:hover {
+  background-color: #38bdf8 !important;
+}
+
+/* ============================================
+   CHAT WIDGET & NAVIGATION ICONS - RESPONSIVE
+   ============================================ */
+
+/* Chat button (bottom right) */
+.chat-button,
+.chat-widget-button,
+[class*="chat"][class*="button"],
+button[aria-label*="chat" i],
+button[title*="chat" i] {
+  /* Desktop default */
+  width: 60px !important;
+  height: 60px !important;
+  bottom: 24px !important;
+  right: 24px !important;
+}
+
+/* Sidebar toggle button (left side green arrow) */
+.sidebar-toggle,
+.nav-toggle,
+[class*="sidebar"] > button:first-child {
+  /* Desktop default */
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE - 270px+
+   ============================================ */
+
+/* Ultra Small (270px - 374px) */
+@media (max-width: 374px) {
+  /* Chat button - VERY SMALL */
+  .chat-button,
+  .chat-widget-button,
+  [class*="chat"][class*="button"],
+  button[aria-label*="chat" i],
+  button[title*="chat" i] {
+    width: 44px !important;
+    height: 44px !important;
+    bottom: 12px !important;
+    right: 12px !important;
+    font-size: 20px !important;
+  }
+  
+  /* Sidebar toggle - SMALLER */
+  .sidebar-toggle,
+  .nav-toggle,
+  [class*="sidebar"] > button:first-child {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 18px !important;
+  }
+  
+  /* Reduce icon sizes inside buttons */
+  .chat-button svg,
+  .chat-widget-button svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+/* Small Phones (375px - 639px) */
+@media (min-width: 375px) and (max-width: 639px) {
+  /* Chat button - SMALL */
+  .chat-button,
+  .chat-widget-button,
+  [class*="chat"][class*="button"],
+  button[aria-label*="chat" i],
+  button[title*="chat" i] {
+    width: 50px !important;
+    height: 50px !important;
+    bottom: 16px !important;
+    right: 16px !important;
+    font-size: 22px !important;
+  }
+  
+  /* Sidebar toggle - SMALL */
+  .sidebar-toggle,
+  .nav-toggle,
+  [class*="sidebar"] > button:first-child {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 20px !important;
+  }
+  
+  .chat-button svg,
+  .chat-widget-button svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+}
+
+/* Tablets (640px - 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .chat-button,
+  .chat-widget-button {
+    width: 56px !important;
+    height: 56px !important;
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+}
+
+/* ============================================
+   SIDEBAR TEXT - RESPONSIVE
+   ============================================ */
+
+/* Progress tracker text */
+.progress-tracker,
+[class*="progress"][class*="tracker"],
+[class*="ProgressTracker"] {
+  font-size: 14px !important;
+}
+
+@media (max-width: 374px) {
+  .progress-tracker,
+  [class*="progress"] {
+    font-size: 12px !important;
+  }
+  
+  .progress-tracker h3,
+  .progress-tracker h4 {
+    font-size: 14px !important;
+  }
+  
+  /* Smaller progress bars */
+  .progress-bar,
+  [class*="progress-bar"] {
+    height: 6px !important;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 639px) {
+  .progress-tracker {
+    font-size: 13px !important;
+  }
+}
+
+/* ============================================
+   Z-INDEX MANAGEMENT - Prevent Overlap
+   ============================================ */
+
+/* Make sure chat button doesn't hide content */
+.chat-button,
+.chat-widget-button {
+  z-index: 999 !important;
+}
+
+/* Ensure footer stays visible */
+.book-footer,
+[class*="footer"] {
+  position: relative;
+  z-index: 10 !important;
+  margin-bottom: 80px; /* Space for chat button */
+}
+
+@media (max-width: 639px) {
+  .book-footer,
+  [class*="footer"] {
+    margin-bottom: 60px; /* Less space on mobile */
+  }
+}
+
