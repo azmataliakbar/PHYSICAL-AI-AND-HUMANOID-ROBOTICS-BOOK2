@@ -1,6 +1,6 @@
 // frontend/src/services/api.ts
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://physical-ai-and-humanoid-robotics-book2.onrender.com';
 
 interface ChatResponse {
   response: string;
